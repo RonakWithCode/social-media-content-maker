@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ConfingDatabase from "../utils/ConfingDatabase"
+import SideMenu from '../components/SideMenu ';
 
-function FolderOpenPage() {
+function ProjectPage() {
   const { id } = useParams();
   const folder = useState();
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ function FolderOpenPage() {
       try {
 
       } catch (error) {
-
+        console.log(error);
       }
     };
 
@@ -27,8 +28,8 @@ function FolderOpenPage() {
 
 
   return (
-    <div>folderOpenPage</div>
+    <SideMenu/>
   )
 }
 
-export default FolderOpenPage
+export default ProjectPage

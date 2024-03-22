@@ -10,7 +10,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Project from './pages/Project'
-import FolderOpenPage from './pages/FolderOpenPage'
+import ProjectPage from './pages/ProjectPage'
 
 
 // const Layout = () => {
@@ -62,8 +62,8 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/project" element={<Project/>}/>
-          <Route path="/folderOpenPage/:id" element={<FolderOpenPage/>}/>
-
+          <Route path="/ProjectPage" element={<ProjectPage/>}/>
+          {/* <Route path="/ProjectPage/:id" element={<ProjectPage/>}/> */}
         </Route>
       </Routes>
     </AuthProvider>
