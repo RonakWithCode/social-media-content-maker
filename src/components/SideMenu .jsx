@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiMenu } from 'react-icons/fi'; // Import menu icon from react-icons
 import { FaPencilAlt, FaTextHeight, FaShapes, FaFileUpload } from 'react-icons/fa'; // Import common icons from react-icons
-import { FaCircle, FaSquare, FaExclamationTriangle } from 'react-icons/fa'; // Import shape icons from react-icons
+import CanvasEditor from './CanvasEditor';
 
 const SideMenu = () => {
     const [showDesign, setShowDesign] = useState(false);
@@ -10,6 +10,7 @@ const SideMenu = () => {
     const [showUploadFile, setShowUploadFile] = useState(false);
     const [showDraw, setShowDraw] = useState(false);
     const [showProjects, setShowProjects] = useState(false);
+
     const toggleDesign = () => {
         setShowDesign(!showDesign);
     };
@@ -34,11 +35,8 @@ const SideMenu = () => {
         setShowProjects(!showProjects);
     };
 
-
-
-
     return (
-        <div className="flex h-screen">
+        <div className="flex bg-gray-500 h-screen">
             {/* Menu button */}
             <div className="flex-none bg-gray-900 text-white ">
                 <ul className="py-4">
@@ -64,24 +62,39 @@ const SideMenu = () => {
                 </ul>
             </div>
 
-   
+
             {showDesign && (
-                <div className="flex-none bg-gray-900 text-white ">
-                    <li className="hover:bg-slate-800 px-4 py-2">
-                        <div className="grid grid-cols-2 gap-2">
-                            <FaCircle className="text-4xl text-blue-500" />
-                            <FaSquare className="text-4xl text-red-500" />
-                            <FaExclamationTriangle className="text-4xl text-yellow-500" />
-                            <FaSquare className="text-4xl text-green-500" />
-                            <FaSquare className="text-4xl text-purple-500" />
-                            <FaSquare className="text-4xl text-orange-500" />
-                            <FaSquare className="text-4xl text-pink-500" />
+                <div className="flex-none bg-gray-900">
+                    <ul>
+                        <div className="grid grid-cols-2">
+                            <li className="hover:bg-slate-700 px-2  py-2">
+                                <svg className="text-blue-500" width="40" height="40" viewBox="0 0 24 24">
+                                    <circle fill='blue' cx="12" cy="12" r="10" />
+                                </svg>
+                            </li>
+                            <li className="hover:bg-slate-700 px-2 py-2">
+                                <svg className="text-red-500" width="40" height="40" viewBox="0 0 24 24">
+                                    <rect fill='red' width="20" height="20" />
+                                </svg>
+                            </li>
+                            <li className="hover:bg-slate-700 px-2 py-2">
+                                <svg className="text-yellow-500" width="40" height="40" viewBox="0 0 24 24">
+                                    <polygon fill='yellow' points="12 2 2 22 22 22" />
+                                </svg>
+                            </li>
+
+
+
+                            {/* Add more SVG shapes here */}
                         </div>
-                    </li>
+
+                    </ul>
+
                 </div>
             )}
 
 
+            <CanvasEditor/>
 
         </div>
     );

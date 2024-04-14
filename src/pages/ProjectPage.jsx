@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ConfingDatabase from "../utils/ConfingDatabase"
 import SideMenu from '../components/SideMenu ';
+import CanvasEditor from '../components/CanvasEditor';
 
 function ProjectPage() {
   const { id } = useParams();
@@ -28,7 +29,11 @@ function ProjectPage() {
 
 
   return (
+    <>
     <SideMenu/>
+    </>
+    
+
   )
 }
 

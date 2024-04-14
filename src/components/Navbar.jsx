@@ -4,7 +4,7 @@ import { useAuth } from '../utils/AuthContext';
 import add_icon from "../assets/SVG/Icon/add-icon.svg";
 import ConfingDatabase from "../utils/ConfingDatabase"
 
-const Navbar = () => {
+const Navbar = () => {  
   const { user, logoutUser } = useAuth();
 
   const [PhoneModeactiveClass, setPhoneModeactiveClass] = useState("hidden");

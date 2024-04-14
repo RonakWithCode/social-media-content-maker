@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Project from './pages/Project'
+import HelpCenter from './pages/HelpCenter'
 import ProjectPage from './pages/ProjectPage'
 
 
@@ -59,15 +60,16 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/" element={<Home/>}/>
+        <Route path="/help-center" element={<HelpCenter/>}/>
         <Route element={<PrivateRoutes />}>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/project" element={<Project/>}/>
-          <Route path="/ProjectPage" element={<ProjectPage/>}/>
-          {/* <Route path="/ProjectPage/:id" element={<ProjectPage/>}/> */}
+          <Route path="/projectPage/:id" element={<ProjectPage/>}/>
+
         </Route>
       </Routes>
     </AuthProvider>
-</Router>
+  </Router>
 
   );
 }
